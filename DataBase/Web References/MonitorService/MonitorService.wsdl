@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.farshine.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.farshine.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.farshine.com/">
+      <s:element name="GetGuiZeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MinBoxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxBoxId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuiZeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGuiZeListResult" type="tns:ArrayOfGuiZeListClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuiZeListClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GuiZeListClass" nillable="true" type="tns:GuiZeListClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GuiZeListClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GZBiaoZhi" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BarType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasZhiTou" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanCheckRcvUnit" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPuFa" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasMoban" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanRepeat" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetYuFaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LastYFBiaoZhi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MinBoxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxBoxId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYuFaInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYuFaInfoResult" type="tns:ArrayOfYuFaClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfYuFaClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="YuFaClass" nillable="true" type="tns:YuFaClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YuFaClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YFBizoZhi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Barcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Barcode56" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullBarcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsJiJian" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Bartype" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiveBoxNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Showmsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YuFaType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isTuiXin" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TuiXinUserId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isDelete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="YuFaTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTouxiang" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsJiaJi" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendUserCardNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LuXiangFileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsKanWu" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="KanwuTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KwAdminCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KwUserCard" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsQuJian" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiveTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiveUserCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FanWei" type="tns:ArrayOfFanWeiClass" />
+          <s:element minOccurs="1" maxOccurs="1" name="FenZuTouXiangFangShi" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFanWeiClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FanWeiClass" nillable="true" type="tns:FanWeiClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FanWeiClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YFBizoZhi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiveBoxNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Showmsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isDelete" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTouxiang" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsKanWu" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="KanwuTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KwAdminCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KwUserCard" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsQuJian" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiveTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiveUserCard" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendYuFaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infos" type="tns:YuFaClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendYuFaInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendYuFaInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="infos" type="tns:YuFaClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxSetInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBoxSetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBoxSetInfoResult" type="tns:ArrayOfBoxSetInfoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBoxSetInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BoxSetInfoClass" nillable="true" type="tns:BoxSetInfoClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BoxSetInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BoxNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrontBoxBN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasTwoLock" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BackBoxBN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGroupSetInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGroupSetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupSetInfoResult" type="tns:ArrayOfGroupSetInfoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGroupSetInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupSetInfoClass" nillable="true" type="tns:GroupSetInfoClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupSetInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupFrontScanBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupFrontCardBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupFrontShowBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupFrontSoundBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupFrontZhiJingMaiBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupFrontSheXiangTouBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBackScanBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBackCardBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBackShowBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBackSoundBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBackZhiJingMaiBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupBackSheXiangTouBN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrinterName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxArray" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupNameArray" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllBoxInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MinBoxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxBoxId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllBoxInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBoxInfoResult" type="tns:ArrayOfBoxInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBoxInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BoxInfo" nillable="true" type="tns:BoxInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BoxInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BoxNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxShowName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxShowFullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsQingTuiXiang" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasJiJian" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DengJiCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DengJiJJCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BoxProperty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBoxShowMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MinBoxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxBoxId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxShowMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBoxShowMessageResult" type="tns:ArrayOfClassBoxShowMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassBoxShowMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassBoxShowMessage" nillable="true" type="tns:ClassBoxShowMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassBoxShowMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="逻辑箱号" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="出差信息" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MinBoxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxBoxId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCardInfoResult" type="tns:ArrayOfCardInfoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCardInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CardInfoClass" nillable="true" type="tns:CardInfoClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardInfoClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="YanZhengType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cardtype" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardPrintType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="boxNO" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBarcodeMuBanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullBarcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBarcodeMuBanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBarcodeMuBanListResult" type="tns:ArrayOfClassBarcodeMuBanList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassBarcodeMuBanList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassBarcodeMuBanList" nillable="true" type="tns:ClassBarcodeMuBanList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassBarcodeMuBanList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="模板标识" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="模板名称" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="模板详情" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMuBanInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MuBanID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMuBanInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMuBanInfoResult" type="tns:YuFaClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBoxStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="box" type="tns:BoxStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BoxStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BoxNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsFront" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LampJiJian" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LampYiQu" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LampCuoWu" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoorStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GateStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FrontGD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BackGD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FullGD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClearGD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChufaGD" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendBoxStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendBoxStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxNO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserCardId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SendTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PicData" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintSendList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiveList" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGetLetterResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter_Record">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxNO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserCardId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SendTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter_RecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGetLetter_RecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter_SetPic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="取件记录ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PicData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter_SetPicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGetLetter_SetPicResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter_Report">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="取件记录ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LocationName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintSendList" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiveList" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGetLetter_ReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserGetLetter_ReportResult" type="tns:UserGetLetterReturnClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserGetLetterReturnClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bPrintSendReport" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="szSendTemplateFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="szSendXmlData" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bPrintRecvReport" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="szRecvTemplateFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="szRecvXmlData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrintUserReturnLetter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCardId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintUserReturnLetterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintUserReturnLetterResult" type="tns:UserGetLetterReturnClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetGuiZeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGuiZeList" />
+  </wsdl:message>
+  <wsdl:message name="GetGuiZeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGuiZeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYuFaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYuFaInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetYuFaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYuFaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendYuFaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SendYuFaInfo" />
+  </wsdl:message>
+  <wsdl:message name="SendYuFaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SendYuFaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxSetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxSetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxSetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxSetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupSetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupSetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupSetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupSetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBoxInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBoxInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBoxInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBoxInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxShowMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxShowMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxShowMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxShowMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBarcodeMuBanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBarcodeMuBanList" />
+  </wsdl:message>
+  <wsdl:message name="GetBarcodeMuBanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBarcodeMuBanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMuBanInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMuBanInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMuBanInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMuBanInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBoxStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBoxStatus" />
+  </wsdl:message>
+  <wsdl:message name="SendBoxStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBoxStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetterSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGetLetter" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetterSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGetLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetter_RecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGetLetter_Record" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetter_RecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGetLetter_RecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetter_SetPicSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGetLetter_SetPic" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetter_SetPicSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGetLetter_SetPicResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetter_ReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGetLetter_Report" />
+  </wsdl:message>
+  <wsdl:message name="UserGetLetter_ReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGetLetter_ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintUserReturnLetterSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintUserReturnLetter" />
+  </wsdl:message>
+  <wsdl:message name="PrintUserReturnLetterSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintUserReturnLetterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MonitorServiceSoap">
+    <wsdl:operation name="GetGuiZeList">
+      <wsdl:input message="tns:GetGuiZeListSoapIn" />
+      <wsdl:output message="tns:GetGuiZeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYuFaInfo">
+      <wsdl:input message="tns:GetYuFaInfoSoapIn" />
+      <wsdl:output message="tns:GetYuFaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendYuFaInfo">
+      <wsdl:input message="tns:SendYuFaInfoSoapIn" />
+      <wsdl:output message="tns:SendYuFaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxSetInfo">
+      <wsdl:input message="tns:GetBoxSetInfoSoapIn" />
+      <wsdl:output message="tns:GetBoxSetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupSetInfo">
+      <wsdl:input message="tns:GetGroupSetInfoSoapIn" />
+      <wsdl:output message="tns:GetGroupSetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBoxInfo">
+      <wsdl:input message="tns:GetAllBoxInfoSoapIn" />
+      <wsdl:output message="tns:GetAllBoxInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxShowMessage">
+      <wsdl:input message="tns:GetBoxShowMessageSoapIn" />
+      <wsdl:output message="tns:GetBoxShowMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCardInfo">
+      <wsdl:input message="tns:GetAllCardInfoSoapIn" />
+      <wsdl:output message="tns:GetAllCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBarcodeMuBanList">
+      <wsdl:input message="tns:GetBarcodeMuBanListSoapIn" />
+      <wsdl:output message="tns:GetBarcodeMuBanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMuBanInfo">
+      <wsdl:input message="tns:GetMuBanInfoSoapIn" />
+      <wsdl:output message="tns:GetMuBanInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBoxStatus">
+      <wsdl:input message="tns:SendBoxStatusSoapIn" />
+      <wsdl:output message="tns:SendBoxStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter">
+      <wsdl:input message="tns:UserGetLetterSoapIn" />
+      <wsdl:output message="tns:UserGetLetterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_Record">
+      <wsdl:input message="tns:UserGetLetter_RecordSoapIn" />
+      <wsdl:output message="tns:UserGetLetter_RecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_SetPic">
+      <wsdl:input message="tns:UserGetLetter_SetPicSoapIn" />
+      <wsdl:output message="tns:UserGetLetter_SetPicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_Report">
+      <wsdl:input message="tns:UserGetLetter_ReportSoapIn" />
+      <wsdl:output message="tns:UserGetLetter_ReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintUserReturnLetter">
+      <wsdl:input message="tns:PrintUserReturnLetterSoapIn" />
+      <wsdl:output message="tns:PrintUserReturnLetterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MonitorServiceSoap" type="tns:MonitorServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGuiZeList">
+      <soap:operation soapAction="http://www.farshine.com/GetGuiZeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYuFaInfo">
+      <soap:operation soapAction="http://www.farshine.com/GetYuFaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendYuFaInfo">
+      <soap:operation soapAction="http://www.farshine.com/SendYuFaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxSetInfo">
+      <soap:operation soapAction="http://www.farshine.com/GetBoxSetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupSetInfo">
+      <soap:operation soapAction="http://www.farshine.com/GetGroupSetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBoxInfo">
+      <soap:operation soapAction="http://www.farshine.com/GetAllBoxInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxShowMessage">
+      <soap:operation soapAction="http://www.farshine.com/GetBoxShowMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCardInfo">
+      <soap:operation soapAction="http://www.farshine.com/GetAllCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarcodeMuBanList">
+      <soap:operation soapAction="http://www.farshine.com/GetBarcodeMuBanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMuBanInfo">
+      <soap:operation soapAction="http://www.farshine.com/GetMuBanInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBoxStatus">
+      <soap:operation soapAction="http://www.farshine.com/SendBoxStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter">
+      <soap:operation soapAction="http://www.farshine.com/UserGetLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_Record">
+      <soap:operation soapAction="http://www.farshine.com/UserGetLetter_Record" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_SetPic">
+      <soap:operation soapAction="http://www.farshine.com/UserGetLetter_SetPic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_Report">
+      <soap:operation soapAction="http://www.farshine.com/UserGetLetter_Report" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintUserReturnLetter">
+      <soap:operation soapAction="http://www.farshine.com/PrintUserReturnLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MonitorServiceSoap12" type="tns:MonitorServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGuiZeList">
+      <soap12:operation soapAction="http://www.farshine.com/GetGuiZeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYuFaInfo">
+      <soap12:operation soapAction="http://www.farshine.com/GetYuFaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendYuFaInfo">
+      <soap12:operation soapAction="http://www.farshine.com/SendYuFaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxSetInfo">
+      <soap12:operation soapAction="http://www.farshine.com/GetBoxSetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupSetInfo">
+      <soap12:operation soapAction="http://www.farshine.com/GetGroupSetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBoxInfo">
+      <soap12:operation soapAction="http://www.farshine.com/GetAllBoxInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxShowMessage">
+      <soap12:operation soapAction="http://www.farshine.com/GetBoxShowMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCardInfo">
+      <soap12:operation soapAction="http://www.farshine.com/GetAllCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarcodeMuBanList">
+      <soap12:operation soapAction="http://www.farshine.com/GetBarcodeMuBanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMuBanInfo">
+      <soap12:operation soapAction="http://www.farshine.com/GetMuBanInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBoxStatus">
+      <soap12:operation soapAction="http://www.farshine.com/SendBoxStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter">
+      <soap12:operation soapAction="http://www.farshine.com/UserGetLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_Record">
+      <soap12:operation soapAction="http://www.farshine.com/UserGetLetter_Record" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_SetPic">
+      <soap12:operation soapAction="http://www.farshine.com/UserGetLetter_SetPic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetLetter_Report">
+      <soap12:operation soapAction="http://www.farshine.com/UserGetLetter_Report" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintUserReturnLetter">
+      <soap12:operation soapAction="http://www.farshine.com/PrintUserReturnLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MonitorService">
+    <wsdl:port name="MonitorServiceSoap" binding="tns:MonitorServiceSoap">
+      <soap:address location="http://localhost:3190/MonitorService/MonitorService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MonitorServiceSoap12" binding="tns:MonitorServiceSoap12">
+      <soap12:address location="http://localhost:3190/MonitorService/MonitorService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.farshine.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.farshine.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.farshine.com/">
+      <s:element name="CheckBarCodeType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BarCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxNOs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBarCodeTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckBarCodeTypeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxNOs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCardType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxNOs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCardTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckCardTypeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxNOs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxLetterCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxLetterCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBoxLetterCountResult" type="tns:BoxInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BoxInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BoxNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxShowName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxShowFullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsQingTuiXiang" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasJiJian" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DengJiCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DengJiJJCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BoxProperty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BoxLetterView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxLetterViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxLetterViewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitList">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnitListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserBoxInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserBoxInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserBoxInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Box_UnitChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UnitBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Box_UnitChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Box_UnitChangeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveLetter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LetterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BoxID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SendFenShu" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUragent" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveLetterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveLetterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveErratumLetter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LetterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdminCardCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserCardCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveErratumLetterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveErratumLetterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Box_UserGetLetter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserCardCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSendReport" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bRecvReport" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Box_UserGetLetterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Box_UserGetLetterResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLeaderOutMessage">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLeaderOutMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLeaderOutMessageResult" type="tns:ArrayOfClassBoxShowMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClassBoxShowMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClassBoxShowMessage" nillable="true" type="tns:ClassBoxShowMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClassBoxShowMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="逻辑箱号" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="出差信息" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckBarCodeTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckBarCodeType" />
+  </wsdl:message>
+  <wsdl:message name="CheckBarCodeTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckBarCodeTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCardTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCardType" />
+  </wsdl:message>
+  <wsdl:message name="CheckCardTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCardTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxLetterCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxLetterCount" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxLetterCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxLetterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="BoxLetterViewSoapIn">
+    <wsdl:part name="parameters" element="tns:BoxLetterView" />
+  </wsdl:message>
+  <wsdl:message name="BoxLetterViewSoapOut">
+    <wsdl:part name="parameters" element="tns:BoxLetterViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitListSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitList" />
+  </wsdl:message>
+  <wsdl:message name="UnitListSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserBoxInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UserBoxInfo" />
+  </wsdl:message>
+  <wsdl:message name="UserBoxInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UserBoxInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Box_UnitChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Box_UnitChange" />
+  </wsdl:message>
+  <wsdl:message name="Box_UnitChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Box_UnitChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveLetterSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveLetter" />
+  </wsdl:message>
+  <wsdl:message name="SaveLetterSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveErratumLetterSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveErratumLetter" />
+  </wsdl:message>
+  <wsdl:message name="SaveErratumLetterSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveErratumLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="Box_UserGetLetterSoapIn">
+    <wsdl:part name="parameters" element="tns:Box_UserGetLetter" />
+  </wsdl:message>
+  <wsdl:message name="Box_UserGetLetterSoapOut">
+    <wsdl:part name="parameters" element="tns:Box_UserGetLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLeaderOutMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLeaderOutMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetLeaderOutMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLeaderOutMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MonitorService_NoLocalSoap">
+    <wsdl:operation name="CheckBarCodeType">
+      <wsdl:input message="tns:CheckBarCodeTypeSoapIn" />
+      <wsdl:output message="tns:CheckBarCodeTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCardType">
+      <wsdl:input message="tns:CheckCardTypeSoapIn" />
+      <wsdl:output message="tns:CheckCardTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxLetterCount">
+      <wsdl:input message="tns:GetBoxLetterCountSoapIn" />
+      <wsdl:output message="tns:GetBoxLetterCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BoxLetterView">
+      <wsdl:input message="tns:BoxLetterViewSoapIn" />
+      <wsdl:output message="tns:BoxLetterViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitList">
+      <wsdl:input message="tns:UnitListSoapIn" />
+      <wsdl:output message="tns:UnitListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input message="tns:CheckLoginSoapIn" />
+      <wsdl:output message="tns:CheckLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserBoxInfo">
+      <wsdl:input message="tns:UserBoxInfoSoapIn" />
+      <wsdl:output message="tns:UserBoxInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Box_UnitChange">
+      <wsdl:input message="tns:Box_UnitChangeSoapIn" />
+      <wsdl:output message="tns:Box_UnitChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLetter">
+      <wsdl:input message="tns:SaveLetterSoapIn" />
+      <wsdl:output message="tns:SaveLetterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveErratumLetter">
+      <wsdl:input message="tns:SaveErratumLetterSoapIn" />
+      <wsdl:output message="tns:SaveErratumLetterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Box_UserGetLetter">
+      <wsdl:input message="tns:Box_UserGetLetterSoapIn" />
+      <wsdl:output message="tns:Box_UserGetLetterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaderOutMessage">
+      <wsdl:input message="tns:GetLeaderOutMessageSoapIn" />
+      <wsdl:output message="tns:GetLeaderOutMessageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MonitorService_NoLocalSoap" type="tns:MonitorService_NoLocalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckBarCodeType">
+      <soap:operation soapAction="http://www.farshine.com/CheckBarCodeType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCardType">
+      <soap:operation soapAction="http://www.farshine.com/CheckCardType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxLetterCount">
+      <soap:operation soapAction="http://www.farshine.com/GetBoxLetterCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxLetterView">
+      <soap:operation soapAction="http://www.farshine.com/BoxLetterView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitList">
+      <soap:operation soapAction="http://www.farshine.com/UnitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap:operation soapAction="http://www.farshine.com/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserBoxInfo">
+      <soap:operation soapAction="http://www.farshine.com/UserBoxInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Box_UnitChange">
+      <soap:operation soapAction="http://www.farshine.com/Box_UnitChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLetter">
+      <soap:operation soapAction="http://www.farshine.com/SaveLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveErratumLetter">
+      <soap:operation soapAction="http://www.farshine.com/SaveErratumLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Box_UserGetLetter">
+      <soap:operation soapAction="http://www.farshine.com/Box_UserGetLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaderOutMessage">
+      <soap:operation soapAction="http://www.farshine.com/GetLeaderOutMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MonitorService_NoLocalSoap12" type="tns:MonitorService_NoLocalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckBarCodeType">
+      <soap12:operation soapAction="http://www.farshine.com/CheckBarCodeType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCardType">
+      <soap12:operation soapAction="http://www.farshine.com/CheckCardType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxLetterCount">
+      <soap12:operation soapAction="http://www.farshine.com/GetBoxLetterCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxLetterView">
+      <soap12:operation soapAction="http://www.farshine.com/BoxLetterView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitList">
+      <soap12:operation soapAction="http://www.farshine.com/UnitList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap12:operation soapAction="http://www.farshine.com/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserBoxInfo">
+      <soap12:operation soapAction="http://www.farshine.com/UserBoxInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Box_UnitChange">
+      <soap12:operation soapAction="http://www.farshine.com/Box_UnitChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLetter">
+      <soap12:operation soapAction="http://www.farshine.com/SaveLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveErratumLetter">
+      <soap12:operation soapAction="http://www.farshine.com/SaveErratumLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Box_UserGetLetter">
+      <soap12:operation soapAction="http://www.farshine.com/Box_UserGetLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaderOutMessage">
+      <soap12:operation soapAction="http://www.farshine.com/GetLeaderOutMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MonitorService_NoLocal">
+    <wsdl:port name="MonitorService_NoLocalSoap" binding="tns:MonitorService_NoLocalSoap">
+      <soap:address location="http://localhost:3190/MonitorService/MonitorService_NoLocal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MonitorService_NoLocalSoap12" binding="tns:MonitorService_NoLocalSoap12">
+      <soap12:address location="http://localhost:3190/MonitorService/MonitorService_NoLocal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

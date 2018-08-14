@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LocalDataSet" targetNamespace="http://tempuri.org/LocalDataSet.xsd" xmlns:mstns="http://tempuri.org/LocalDataSet.xsd" xmlns="http://tempuri.org/LocalDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LocalDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="LocalDataSet" msprop:Generator_UserDSName="LocalDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="预发表" msprop:Generator_UserTableName="预发表" msprop:Generator_RowEvArgName="预发表RowChangeEvent" msprop:Generator_TableVarName="table预发表" msprop:Generator_TablePropName="预发表" msprop:Generator_RowDeletingName="预发表RowDeleting" msprop:Generator_RowChangingName="预发表RowChanging" msprop:Generator_RowDeletedName="预发表RowDeleted" msprop:Generator_RowEvHandlerName="预发表RowChangeEventHandler" msprop:Generator_RowChangedName="预发表RowChanged" msprop:Generator_TableClassName="预发表DataTable" msprop:Generator_RowClassName="预发表Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="是否同步" msprop:Generator_ColumnVarNameInTable="column是否同步" msprop:Generator_ColumnPropNameInRow="是否同步" msprop:Generator_ColumnPropNameInTable="是否同步Column" msprop:Generator_UserColumnName="是否同步" type="xs:boolean" default="false" />
+              <xs:element name="预发标识" msprop:Generator_ColumnVarNameInTable="column预发标识" msprop:Generator_ColumnPropNameInRow="预发标识" msprop:Generator_ColumnPropNameInTable="预发标识Column" msprop:Generator_UserColumnName="预发标识" type="xs:string" default="" />
+              <xs:element name="条码编号" msprop:Generator_ColumnVarNameInTable="column条码编号" msprop:Generator_ColumnPropNameInRow="条码编号" msprop:Generator_ColumnPropNameInTable="条码编号Column" msprop:Generator_UserColumnName="条码编号" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="条码编号56" msprop:Generator_ColumnVarNameInTable="column条码编号56" msprop:Generator_ColumnPropNameInRow="条码编号56" msprop:Generator_ColumnPropNameInTable="条码编号56Column" msprop:Generator_UserColumnName="条码编号56" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="完整条码" msprop:Generator_ColumnVarNameInTable="column完整条码" msprop:Generator_ColumnPropNameInRow="完整条码" msprop:Generator_ColumnPropNameInTable="完整条码Column" msprop:Generator_UserColumnName="完整条码" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="是否是急件" msprop:Generator_ColumnVarNameInTable="column是否是急件" msprop:Generator_ColumnPropNameInRow="是否是急件" msprop:Generator_ColumnPropNameInTable="是否是急件Column" msprop:Generator_UserColumnName="是否是急件" type="xs:boolean" default="false" />
+              <xs:element name="条码类型" msprop:Generator_ColumnVarNameInTable="column条码类型" msprop:Generator_ColumnPropNameInRow="条码类型" msprop:Generator_ColumnPropNameInTable="条码类型Column" msprop:Generator_UserColumnName="条码类型" type="xs:int" default="0" />
+              <xs:element name="收件箱格号码" msprop:Generator_ColumnVarNameInTable="column收件箱格号码" msprop:Generator_ColumnPropNameInRow="收件箱格号码" msprop:Generator_ColumnPropNameInTable="收件箱格号码Column" msprop:Generator_UserColumnName="收件箱格号码" type="xs:int" default="0" />
+              <xs:element name="份号" msprop:Generator_ColumnVarNameInTable="column份号" msprop:Generator_ColumnPropNameInRow="份号" msprop:Generator_ColumnPropNameInTable="份号Column" msprop:Generator_UserColumnName="份号" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="预发时间" msprop:Generator_ColumnVarNameInTable="column预发时间" msprop:Generator_ColumnPropNameInRow="预发时间" msprop:Generator_ColumnPropNameInTable="预发时间Column" msprop:Generator_UserColumnName="预发时间" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="DocId" msprop:Generator_ColumnVarNameInTable="columnDocId" msprop:Generator_ColumnPropNameInRow="DocId" msprop:Generator_ColumnPropNameInTable="DocIdColumn" msprop:Generator_UserColumnName="DocId" type="xs:string" default="" />
+              <xs:element name="是否删除" msprop:Generator_ColumnVarNameInTable="column是否删除" msprop:Generator_ColumnPropNameInRow="是否删除" msprop:Generator_ColumnPropNameInTable="是否删除Column" msprop:Generator_UserColumnName="是否删除" type="xs:boolean" default="false" />
+              <xs:element name="投箱状态" msprop:Generator_ColumnVarNameInTable="column投箱状态" msprop:Generator_ColumnPropNameInRow="投箱状态" msprop:Generator_ColumnPropNameInTable="投箱状态Column" msprop:Generator_UserColumnName="投箱状态" type="xs:boolean" default="false" />
+              <xs:element name="投箱时间" msprop:Generator_ColumnVarNameInTable="column投箱时间" msprop:Generator_ColumnPropNameInRow="投箱时间" msprop:Generator_ColumnPropNameInTable="投箱时间Column" msprop:Generator_UserColumnName="投箱时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="手工加急" msprop:Generator_ColumnVarNameInTable="column手工加急" msprop:Generator_ColumnPropNameInRow="手工加急" msprop:Generator_ColumnPropNameInTable="手工加急Column" msprop:Generator_UserColumnName="手工加急" type="xs:boolean" minOccurs="0" />
+              <xs:element name="清退人" msprop:Generator_ColumnVarNameInTable="column清退人" msprop:Generator_ColumnPropNameInRow="清退人" msprop:Generator_ColumnPropNameInTable="清退人Column" msprop:Generator_UserColumnName="清退人" type="xs:string" default="" />
+              <xs:element name="录像文件名称" msprop:Generator_ColumnVarNameInTable="column录像文件名称" msprop:Generator_ColumnPropNameInRow="录像文件名称" msprop:Generator_ColumnPropNameInTable="录像文件名称Column" msprop:Generator_UserColumnName="录像文件名称" type="xs:string" default="" />
+              <xs:element name="是否勘误" msprop:Generator_ColumnVarNameInTable="column是否勘误" msprop:Generator_ColumnPropNameInRow="是否勘误" msprop:Generator_ColumnPropNameInTable="是否勘误Column" msprop:Generator_UserColumnName="是否勘误" type="xs:boolean" default="false" />
+              <xs:element name="勘误时间" msprop:Generator_ColumnVarNameInTable="column勘误时间" msprop:Generator_ColumnPropNameInRow="勘误时间" msprop:Generator_ColumnPropNameInTable="勘误时间Column" msprop:Generator_UserColumnName="勘误时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="勘误管理员卡号" msprop:Generator_ColumnVarNameInTable="column勘误管理员卡号" msprop:Generator_ColumnPropNameInRow="勘误管理员卡号" msprop:Generator_ColumnPropNameInTable="勘误管理员卡号Column" msprop:Generator_UserColumnName="勘误管理员卡号" type="xs:string" minOccurs="0" />
+              <xs:element name="勘误交换员卡号" msprop:Generator_ColumnVarNameInTable="column勘误交换员卡号" msprop:Generator_ColumnPropNameInRow="勘误交换员卡号" msprop:Generator_ColumnPropNameInTable="勘误交换员卡号Column" msprop:Generator_UserColumnName="勘误交换员卡号" type="xs:string" minOccurs="0" />
+              <xs:element name="取件状态" msprop:Generator_ColumnVarNameInTable="column取件状态" msprop:Generator_ColumnPropNameInRow="取件状态" msprop:Generator_ColumnPropNameInTable="取件状态Column" msprop:Generator_UserColumnName="取件状态" type="xs:boolean" default="false" />
+              <xs:element name="取件时间" msprop:Generator_ColumnVarNameInTable="column取件时间" msprop:Generator_ColumnPropNameInRow="取件时间" msprop:Generator_ColumnPropNameInTable="取件时间Column" msprop:Generator_UserColumnName="取件时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="取件人证卡号码" msprop:Generator_ColumnVarNameInTable="column取件人证卡号码" msprop:Generator_ColumnPropNameInRow="取件人证卡号码" msprop:Generator_ColumnPropNameInTable="取件人证卡号码Column" msprop:Generator_UserColumnName="取件人证卡号码" type="xs:string" minOccurs="0" />
+              <xs:element name="同步错误次数" msprop:Generator_ColumnVarNameInTable="column同步错误次数" msprop:Generator_ColumnPropNameInRow="同步错误次数" msprop:Generator_ColumnPropNameInTable="同步错误次数Column" msprop:Generator_UserColumnName="同步错误次数" type="xs:int" default="0" />
+              <xs:element name="投箱类型" msprop:Generator_ColumnVarNameInTable="column投箱类型" msprop:Generator_ColumnPropNameInRow="投箱类型" msprop:Generator_ColumnPropNameInTable="投箱类型Column" msprop:Generator_UserColumnName="投箱类型" type="xs:int" default="0" />
+              <xs:element name="是否退信" msprop:Generator_ColumnVarNameInTable="column是否退信" msprop:Generator_ColumnPropNameInRow="是否退信" msprop:Generator_ColumnPropNameInTable="是否退信Column" msprop:Generator_UserColumnName="是否退信" type="xs:boolean" default="false" />
+              <xs:element name="退信管理员证卡编号" msprop:Generator_ColumnVarNameInTable="column退信管理员证卡编号" msprop:Generator_ColumnPropNameInRow="退信管理员证卡编号" msprop:Generator_ColumnPropNameInTable="退信管理员证卡编号Column" msprop:Generator_UserColumnName="退信管理员证卡编号" type="xs:string" default="" />
+              <xs:element name="分组投箱方式" msprop:Generator_ColumnVarNameInTable="column分组投箱方式" msprop:Generator_ColumnPropNameInRow="分组投箱方式" msprop:nullValue="0" msprop:Generator_ColumnPropNameInTable="分组投箱方式Column" msprop:Generator_UserColumnName="分组投箱方式" type="xs:int" default="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="范围表" msprop:Generator_UserTableName="范围表" msprop:Generator_RowEvArgName="范围表RowChangeEvent" msprop:Generator_TableVarName="table范围表" msprop:Generator_TablePropName="范围表" msprop:Generator_RowDeletingName="范围表RowDeleting" msprop:Generator_RowChangingName="范围表RowChanging" msprop:Generator_RowDeletedName="范围表RowDeleted" msprop:Generator_RowEvHandlerName="范围表RowChangeEventHandler" msprop:Generator_RowChangedName="范围表RowChanged" msprop:Generator_TableClassName="范围表DataTable" msprop:Generator_RowClassName="范围表Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="是否同步" msprop:Generator_ColumnVarNameInTable="column是否同步" msprop:Generator_ColumnPropNameInRow="是否同步" msprop:Generator_ColumnPropNameInTable="是否同步Column" msprop:Generator_UserColumnName="是否同步" type="xs:boolean" default="false" />
+              <xs:element name="预发标识" msprop:Generator_ColumnVarNameInTable="column预发标识" msprop:Generator_ColumnPropNameInRow="预发标识" msprop:Generator_ColumnPropNameInTable="预发标识Column" msprop:Generator_UserColumnName="预发标识" type="xs:string" default="" />
+              <xs:element name="收件箱格号码" msprop:Generator_ColumnVarNameInTable="column收件箱格号码" msprop:Generator_ColumnPropNameInRow="收件箱格号码" msprop:Generator_ColumnPropNameInTable="收件箱格号码Column" msprop:Generator_UserColumnName="收件箱格号码" type="xs:int" default="0" />
+              <xs:element name="份号" msprop:Generator_ColumnVarNameInTable="column份号" msprop:Generator_ColumnPropNameInRow="份号" msprop:Generator_ColumnPropNameInTable="份号Column" msprop:Generator_UserColumnName="份号" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="分发份数" msprop:Generator_ColumnVarNameInTable="column分发份数" msprop:Generator_ColumnPropNameInRow="分发份数" msprop:Generator_ColumnPropNameInTable="分发份数Column" msprop:Generator_UserColumnName="分发份数" type="xs:int" default="1" />
+              <xs:element name="是否删除" msprop:Generator_ColumnVarNameInTable="column是否删除" msprop:Generator_ColumnPropNameInRow="是否删除" msprop:Generator_ColumnPropNameInTable="是否删除Column" msprop:Generator_UserColumnName="是否删除" type="xs:boolean" default="false" />
+              <xs:element name="投箱状态" msprop:Generator_ColumnVarNameInTable="column投箱状态" msprop:Generator_ColumnPropNameInRow="投箱状态" msprop:Generator_ColumnPropNameInTable="投箱状态Column" msprop:Generator_UserColumnName="投箱状态" type="xs:boolean" default="false" />
+              <xs:element name="投箱时间" msprop:Generator_ColumnVarNameInTable="column投箱时间" msprop:Generator_ColumnPropNameInRow="投箱时间" msprop:Generator_ColumnPropNameInTable="投箱时间Column" msprop:Generator_UserColumnName="投箱时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="投入份数" msprop:Generator_ColumnVarNameInTable="column投入份数" msprop:Generator_ColumnPropNameInRow="投入份数" msprop:Generator_ColumnPropNameInTable="投入份数Column" msprop:Generator_UserColumnName="投入份数" type="xs:int" default="0" />
+              <xs:element name="是否勘误" msprop:Generator_ColumnVarNameInTable="column是否勘误" msprop:Generator_ColumnPropNameInRow="是否勘误" msprop:Generator_ColumnPropNameInTable="是否勘误Column" msprop:Generator_UserColumnName="是否勘误" type="xs:boolean" default="false" />
+              <xs:element name="勘误时间" msprop:Generator_ColumnVarNameInTable="column勘误时间" msprop:Generator_ColumnPropNameInRow="勘误时间" msprop:Generator_ColumnPropNameInTable="勘误时间Column" msprop:Generator_UserColumnName="勘误时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="勘误管理员卡号" msprop:Generator_ColumnVarNameInTable="column勘误管理员卡号" msprop:Generator_ColumnPropNameInRow="勘误管理员卡号" msprop:Generator_ColumnPropNameInTable="勘误管理员卡号Column" msprop:Generator_UserColumnName="勘误管理员卡号" type="xs:string" minOccurs="0" />
+              <xs:element name="勘误交换员卡号" msprop:Generator_ColumnVarNameInTable="column勘误交换员卡号" msprop:Generator_ColumnPropNameInRow="勘误交换员卡号" msprop:Generator_ColumnPropNameInTable="勘误交换员卡号Column" msprop:Generator_UserColumnName="勘误交换员卡号" type="xs:string" minOccurs="0" />
+              <xs:element name="取件状态" msprop:Generator_ColumnVarNameInTable="column取件状态" msprop:Generator_ColumnPropNameInRow="取件状态" msprop:Generator_ColumnPropNameInTable="取件状态Column" msprop:Generator_UserColumnName="取件状态" type="xs:boolean" default="false" />
+              <xs:element name="取件时间" msprop:Generator_ColumnVarNameInTable="column取件时间" msprop:Generator_ColumnPropNameInRow="取件时间" msprop:Generator_ColumnPropNameInTable="取件时间Column" msprop:Generator_UserColumnName="取件时间" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="取件人证卡号码" msprop:Generator_ColumnVarNameInTable="column取件人证卡号码" msprop:Generator_ColumnPropNameInRow="取件人证卡号码" msprop:Generator_ColumnPropNameInTable="取件人证卡号码Column" msprop:Generator_UserColumnName="取件人证卡号码" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="证卡列表" msprop:Generator_UserTableName="证卡列表" msprop:Generator_RowEvArgName="证卡列表RowChangeEvent" msprop:Generator_TableVarName="table证卡列表" msprop:Generator_TablePropName="证卡列表" msprop:Generator_RowDeletingName="证卡列表RowDeleting" msprop:Generator_RowChangingName="证卡列表RowChanging" msprop:Generator_RowDeletedName="证卡列表RowDeleted" msprop:Generator_RowEvHandlerName="证卡列表RowChangeEventHandler" msprop:Generator_RowChangedName="证卡列表RowChanged" msprop:Generator_TableClassName="证卡列表DataTable" msprop:Generator_RowClassName="证卡列表Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="证卡编号" msprop:Generator_ColumnVarNameInTable="column证卡编号" msprop:Generator_ColumnPropNameInRow="证卡编号" msprop:Generator_ColumnPropNameInTable="证卡编号Column" msprop:Generator_UserColumnName="证卡编号" type="xs:int" minOccurs="0" />
+              <xs:element name="验证类型" msprop:Generator_ColumnVarNameInTable="column验证类型" msprop:Generator_ColumnPropNameInRow="验证类型" msprop:Generator_ColumnPropNameInTable="验证类型Column" msprop:Generator_UserColumnName="验证类型" type="xs:int" default="1" />
+              <xs:element name="证卡号码" msprop:Generator_ColumnVarNameInTable="column证卡号码" msprop:Generator_ColumnPropNameInRow="证卡号码" msprop:Generator_ColumnPropNameInTable="证卡号码Column" msprop:Generator_UserColumnName="证卡号码" type="xs:string" minOccurs="0" />
+              <xs:element name="证卡类型" msprop:Generator_ColumnVarNameInTable="column证卡类型" msprop:Generator_ColumnPropNameInRow="证卡类型" msprop:Generator_ColumnPropNameInTable="证卡类型Column" msprop:Generator_UserColumnName="证卡类型" type="xs:int" default="2" />
+              <xs:element name="箱格号码" msprop:Generator_ColumnVarNameInTable="column箱格号码" msprop:Generator_ColumnPropNameInRow="箱格号码" msprop:Generator_ColumnPropNameInTable="箱格号码Column" msprop:Generator_UserColumnName="箱格号码" type="xs:int" default="0" />
+              <xs:element name="单位名称" msprop:Generator_ColumnVarNameInTable="column单位名称" msprop:Generator_ColumnPropNameInRow="单位名称" msprop:Generator_ColumnPropNameInTable="单位名称Column" msprop:Generator_UserColumnName="单位名称" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="用户名称" msprop:Generator_ColumnVarNameInTable="column用户名称" msprop:Generator_ColumnPropNameInRow="用户名称" msprop:Generator_ColumnPropNameInTable="用户名称Column" msprop:Generator_UserColumnName="用户名称" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="用户可以打印的清单的类型" msprop:Generator_ColumnVarNameInTable="column用户可以打印的清单的类型" msprop:Generator_ColumnPropNameInRow="用户可以打印的清单的类型" msprop:Generator_ColumnPropNameInTable="用户可以打印的清单的类型Column" msprop:Generator_UserColumnName="用户可以打印的清单的类型" type="xs:int" default="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="规则策略" msprop:Generator_UserTableName="规则策略" msprop:Generator_RowEvArgName="规则策略RowChangeEvent" msprop:Generator_TableVarName="table规则策略" msprop:Generator_TablePropName="规则策略" msprop:Generator_RowDeletingName="规则策略RowDeleting" msprop:Generator_RowChangingName="规则策略RowChanging" msprop:Generator_RowDeletedName="规则策略RowDeleted" msprop:Generator_RowEvHandlerName="规则策略RowChangeEventHandler" msprop:Generator_RowChangedName="规则策略RowChanged" msprop:Generator_TableClassName="规则策略DataTable" msprop:Generator_RowClassName="规则策略Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="规则标识" msprop:Generator_ColumnVarNameInTable="column规则标识" msprop:Generator_ColumnPropNameInRow="规则标识" msprop:Generator_ColumnPropNameInTable="规则标识Column" msprop:Generator_UserColumnName="规则标识" type="xs:int" default="0" />
+              <xs:element name="规则名称" msprop:Generator_ColumnVarNameInTable="column规则名称" msprop:Generator_ColumnPropNameInRow="规则名称" msprop:Generator_ColumnPropNameInTable="规则名称Column" msprop:Generator_UserColumnName="规则名称" type="xs:string" minOccurs="0" />
+              <xs:element name="规则类型" msprop:Generator_ColumnVarNameInTable="column规则类型" msprop:Generator_ColumnPropNameInRow="规则类型" msprop:Generator_ColumnPropNameInTable="规则类型Column" msprop:Generator_UserColumnName="规则类型" type="xs:int" default="0" />
+              <xs:element name="允许直投" msprop:Generator_ColumnVarNameInTable="column允许直投" msprop:Generator_ColumnPropNameInRow="允许直投" msprop:Generator_ColumnPropNameInTable="允许直投Column" msprop:Generator_UserColumnName="允许直投" type="xs:boolean" default="false" />
+              <xs:element name="允许解析" msprop:Generator_ColumnVarNameInTable="column允许解析" msprop:Generator_ColumnPropNameInRow="允许解析" msprop:Generator_ColumnPropNameInTable="允许解析Column" msprop:Generator_UserColumnName="允许解析" type="xs:boolean" default="false" />
+              <xs:element name="允许普发" msprop:Generator_ColumnVarNameInTable="column允许普发" msprop:Generator_ColumnPropNameInRow="允许普发" msprop:Generator_ColumnPropNameInTable="允许普发Column" msprop:Generator_UserColumnName="允许普发" type="xs:boolean" default="false" />
+              <xs:element name="允许模板" msprop:Generator_ColumnVarNameInTable="column允许模板" msprop:Generator_ColumnPropNameInRow="允许模板" msprop:Generator_ColumnPropNameInTable="允许模板Column" msprop:Generator_UserColumnName="允许模板" type="xs:boolean" default="false" />
+              <xs:element name="允许重复投箱" msprop:Generator_ColumnVarNameInTable="column允许重复投箱" msprop:Generator_ColumnPropNameInRow="允许重复投箱" msprop:Generator_ColumnPropNameInTable="允许重复投箱Column" msprop:Generator_UserColumnName="允许重复投箱" type="xs:boolean" default="false" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="箱格信息" msprop:Generator_UserTableName="箱格信息" msprop:Generator_RowEvArgName="箱格信息RowChangeEvent" msprop:Generator_TableVarName="table箱格信息" msprop:Generator_TablePropName="箱格信息" msprop:Generator_RowDeletingName="箱格信息RowDeleting" msprop:Generator_RowChangingName="箱格信息RowChanging" msprop:Generator_RowDeletedName="箱格信息RowDeleted" msprop:Generator_RowEvHandlerName="箱格信息RowChangeEventHandler" msprop:Generator_RowChangedName="箱格信息RowChanged" msprop:Generator_TableClassName="箱格信息DataTable" msprop:Generator_RowClassName="箱格信息Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="逻辑箱号" msprop:Generator_ColumnVarNameInTable="column逻辑箱号" msprop:Generator_ColumnPropNameInRow="逻辑箱号" msprop:Generator_ColumnPropNameInTable="逻辑箱号Column" msprop:Generator_UserColumnName="逻辑箱号" type="xs:int" default="0" />
+              <xs:element name="单位编号" msprop:Generator_ColumnVarNameInTable="column单位编号" msprop:Generator_ColumnPropNameInRow="单位编号" msprop:Generator_ColumnPropNameInTable="单位编号Column" msprop:Generator_UserColumnName="单位编号" type="xs:string" default="&quot;&quot;" />
+              <xs:element name="简称" msprop:Generator_ColumnVarNameInTable="column简称" msprop:Generator_ColumnPropNameInRow="简称" msprop:Generator_ColumnPropNameInTable="简称Column" msprop:Generator_UserColumnName="简称" type="xs:string" default="&quot;&quot;" />
+              <xs:element name="全称" msprop:Generator_ColumnVarNameInTable="column全称" msprop:Generator_ColumnPropNameInRow="全称" msprop:Generator_ColumnPropNameInTable="全称Column" msprop:Generator_UserColumnName="全称" type="xs:string" default="&quot;&quot;" />
+              <xs:element name="是否清退箱" msprop:Generator_ColumnVarNameInTable="column是否清退箱" msprop:Generator_ColumnPropNameInRow="是否清退箱" msprop:Generator_ColumnPropNameInTable="是否清退箱Column" msprop:Generator_UserColumnName="是否清退箱" type="xs:boolean" default="false" />
+              <xs:element name="箱格数量" msprop:Generator_ColumnVarNameInTable="column箱格数量" msprop:Generator_ColumnPropNameInRow="箱格数量" msprop:Generator_ColumnPropNameInTable="箱格数量Column" msprop:Generator_UserColumnName="箱格数量" type="xs:int" default="0" />
+              <xs:element name="是否有急件" msprop:Generator_ColumnVarNameInTable="column是否有急件" msprop:Generator_ColumnPropNameInRow="是否有急件" msprop:Generator_ColumnPropNameInTable="是否有急件Column" msprop:Generator_UserColumnName="是否有急件" type="xs:boolean" default="false" />
+              <xs:element name="登记数量" msprop:Generator_ColumnVarNameInTable="column登记数量" msprop:Generator_ColumnPropNameInRow="登记数量" msprop:Generator_ColumnPropNameInTable="登记数量Column" msprop:Generator_UserColumnName="登记数量" type="xs:int" default="0" />
+              <xs:element name="登记急件数量" msprop:Generator_ColumnVarNameInTable="column登记急件数量" msprop:Generator_ColumnPropNameInRow="登记急件数量" msprop:Generator_ColumnPropNameInTable="登记急件数量Column" msprop:Generator_UserColumnName="登记急件数量" type="xs:int" default="0" />
+              <xs:element name="箱格属性" msprop:Generator_ColumnVarNameInTable="column箱格属性" msprop:Generator_ColumnPropNameInRow="箱格属性" msprop:Generator_ColumnPropNameInTable="箱格属性Column" msprop:Generator_UserColumnName="箱格属性" type="xs:int" default="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="用户取件表" msprop:Generator_UserTableName="用户取件表" msprop:Generator_RowEvArgName="用户取件表RowChangeEvent" msprop:Generator_TableVarName="table用户取件表" msprop:Generator_TablePropName="用户取件表" msprop:Generator_RowDeletingName="用户取件表RowDeleting" msprop:Generator_RowChangingName="用户取件表RowChanging" msprop:Generator_RowDeletedName="用户取件表RowDeleted" msprop:Generator_RowEvHandlerName="用户取件表RowChangeEventHandler" msprop:Generator_RowChangedName="用户取件表RowChanged" msprop:Generator_TableClassName="用户取件表DataTable" msprop:Generator_RowClassName="用户取件表Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="逻辑箱号" msprop:Generator_ColumnVarNameInTable="column逻辑箱号" msprop:Generator_ColumnPropNameInRow="逻辑箱号" msprop:Generator_ColumnPropNameInTable="逻辑箱号Column" msprop:Generator_UserColumnName="逻辑箱号" type="xs:int" default="0" />
+              <xs:element name="用户卡号" msprop:Generator_ColumnVarNameInTable="column用户卡号" msprop:Generator_ColumnPropNameInRow="用户卡号" msprop:Generator_ColumnPropNameInTable="用户卡号Column" msprop:Generator_UserColumnName="用户卡号" type="xs:string" minOccurs="0" />
+              <xs:element name="照片内容" msprop:Generator_ColumnVarNameInTable="column照片内容" msprop:Generator_ColumnPropNameInRow="照片内容" msprop:Generator_ColumnPropNameInTable="照片内容Column" msprop:Generator_UserColumnName="照片内容" type="xs:string" minOccurs="0" />
+              <xs:element name="是否同步" msprop:Generator_ColumnVarNameInTable="column是否同步" msprop:Generator_ColumnPropNameInRow="是否同步" msprop:Generator_ColumnPropNameInTable="是否同步Column" msprop:Generator_UserColumnName="是否同步" type="xs:boolean" default="false" />
+              <xs:element name="取件时间" msprop:Generator_ColumnVarNameInTable="column取件时间" msprop:Generator_ColumnPropNameInRow="取件时间" msprop:Generator_ColumnPropNameInTable="取件时间Column" msprop:Generator_UserColumnName="取件时间" type="xs:string" minOccurs="0" />
+              <xs:element name="是否打印发件清单" msprop:Generator_ColumnVarNameInTable="column是否打印发件清单" msprop:Generator_ColumnPropNameInRow="是否打印发件清单" msprop:Generator_ColumnPropNameInTable="是否打印发件清单Column" msprop:Generator_UserColumnName="是否打印发件清单" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="是否打印取件清单" msprop:Generator_ColumnVarNameInTable="column是否打印取件清单" msprop:Generator_ColumnPropNameInRow="是否打印取件清单" msprop:Generator_ColumnPropNameInTable="是否打印取件清单Column" msprop:Generator_UserColumnName="是否打印取件清单" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="同步次数" msprop:Generator_ColumnVarNameInTable="column同步次数" msprop:Generator_ColumnPropNameInRow="同步次数" msprop:Generator_ColumnPropNameInTable="同步次数Column" msprop:Generator_UserColumnName="同步次数" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="图片数据是否已经处理" msprop:Generator_ColumnVarNameInTable="column图片数据是否已经处理" msprop:Generator_ColumnPropNameInRow="图片数据是否已经处理" msprop:Generator_ColumnPropNameInTable="图片数据是否已经处理Column" msprop:Generator_UserColumnName="图片数据是否已经处理" type="xs:boolean" default="false" />
+              <xs:element name="取件记录ID" msprop:Generator_ColumnVarNameInTable="column取件记录ID" msprop:Generator_ColumnPropNameInRow="取件记录ID" msprop:Generator_ColumnPropNameInTable="取件记录IDColumn" msprop:Generator_UserColumnName="取件记录ID" type="xs:int" default="0" />
+              <xs:element name="清单打印机" msprop:Generator_ColumnVarNameInTable="column清单打印机" msprop:Generator_ColumnPropNameInRow="清单打印机" msprop:Generator_ColumnPropNameInTable="清单打印机Column" msprop:Generator_UserColumnName="清单打印机" type="xs:string" minOccurs="0" />
+              <xs:element name="取件柜箱组名称" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="取件柜箱组名称" msprop:Generator_ColumnVarNameInTable="column取件柜箱组名称" msprop:Generator_ColumnPropNameInTable="取件柜箱组名称Column" msprop:Generator_UserColumnName="取件柜箱组名称" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="提示信息" msprop:Generator_UserTableName="提示信息" msprop:Generator_RowEvArgName="提示信息RowChangeEvent" msprop:Generator_TableVarName="table提示信息" msprop:Generator_TablePropName="提示信息" msprop:Generator_RowDeletingName="提示信息RowDeleting" msprop:Generator_RowChangingName="提示信息RowChanging" msprop:Generator_RowDeletedName="提示信息RowDeleted" msprop:Generator_RowEvHandlerName="提示信息RowChangeEventHandler" msprop:Generator_RowChangedName="提示信息RowChanged" msprop:Generator_TableClassName="提示信息DataTable" msprop:Generator_RowClassName="提示信息Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="逻辑箱号" msprop:Generator_ColumnVarNameInTable="column逻辑箱号" msprop:Generator_ColumnPropNameInRow="逻辑箱号" msprop:Generator_ColumnPropNameInTable="逻辑箱号Column" msprop:Generator_UserColumnName="逻辑箱号" type="xs:int" default="0" />
+              <xs:element name="出差信息" msprop:Generator_ColumnVarNameInTable="column出差信息" msprop:Generator_ColumnPropNameInRow="出差信息" msprop:Generator_ColumnPropNameInTable="出差信息Column" msprop:Generator_UserColumnName="出差信息" type="xs:string" default="&quot;&quot;" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:预发表" />
+      <xs:field xpath="mstns:预发标识" />
+    </xs:unique>
+    <xs:keyref name="FK_范围表_预发表" refer="Constraint1" msprop:rel_Generator_UserChildTable="范围表" msprop:rel_Generator_ChildPropName="Get范围表Rows" msprop:rel_Generator_ParentPropName="预发表Row" msprop:rel_Generator_UserRelationName="FK_范围表_预发表" msprop:rel_Generator_RelationVarName="relationFK_范围表_预发表" msprop:rel_Generator_UserParentTable="预发表">
+      <xs:selector xpath=".//mstns:范围表" />
+      <xs:field xpath="mstns:预发标识" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

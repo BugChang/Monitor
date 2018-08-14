@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DataBase.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DataBase_MonitorService_MonitorService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3190/MonitorService/MonitorService.asmx</Value>
+    </Setting>
+    <Setting Name="DataBase_MonitorService_NoLocal_MonitorService_NoLocal" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3190/MonitorService/MonitorService_NoLocal.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
