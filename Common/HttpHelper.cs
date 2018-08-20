@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -15,7 +16,8 @@ namespace Common
         {
             try
             {
-                url += "?macAddress=" + GetMacAddress();
+                var placeId = Convert.ToInt32(ConfigurationManager.AppSettings["PlaceId"]);
+                url += "?placeId=" + placeId;
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
@@ -25,19 +27,19 @@ namespace Common
                 writer.Flush();
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 string encoding = response.ContentEncoding;
-                if (encoding == null || encoding.Length < 1)
+                if (string.IsNullOrEmpty(encoding))
                 {
                     encoding = "UTF-8"; //默认编码  
                 }
-                StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding(encoding));
+                StreamReader reader = new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(), Encoding.GetEncoding(encoding));
                 string retString = reader.ReadToEnd();
                 return retString;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "";
             }
-           
+
         }
 
         /// <summary>
@@ -51,24 +53,25 @@ namespace Common
         {
             try
             {
-                postDataStr += "&macAddress=" + GetMacAddress();
+                var placeId = Convert.ToInt32(ConfigurationManager.AppSettings["PlaceId"]);
+                postDataStr += "&placeId=" + placeId;
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url + (postDataStr == "" ? "" : "?") + postDataStr);
                 request.Method = "GET";
                 request.ContentType = "text/html;charset=UTF-8";
 
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream myResponseStream = response.GetResponseStream();
-                StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+                StreamReader myStreamReader = new StreamReader(myResponseStream ?? throw new InvalidOperationException(), Encoding.GetEncoding("utf-8"));
                 string retString = myStreamReader.ReadToEnd();
                 myStreamReader.Close();
                 myResponseStream.Close();
 
                 return retString;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "";
-            }            
+            }
         }
 
         public static string GetMacAddress()

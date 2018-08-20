@@ -126,21 +126,17 @@ namespace DataBase
                 try
                 {
                     var url = Constant.ServiceURL + "GetBoxSetInfo";
-                    Log.WriteFileLog(url);
                     var result = HttpHelper.HttpGet(url, "");
-                    Log.WriteFileLog(result);
                     var obj = JsonConvert.DeserializeObject<dynamic>(result);
-                    Log.WriteFileLog(obj.ToString());
                     var boxSetInfos = new List<BoxSetInfoClass>();
-
                     foreach (var box in obj)
                     {
                         BoxSetInfoClass boxSetInfo = new BoxSetInfoClass
                         {
-                            BoxNO = box.No,
-                            BackBoxBN = box.BackBn,
-                            FrontBoxBN = box.FrontBn,
-                            HasTwoLock = box.IsTwoLock
+                            BoxNO = box.id.ToString(),
+                            BackBoxBN = box.backBn,
+                            FrontBoxBN = box.frontBn,
+                            HasTwoLock = box.isTwoLock
                         };
                         boxSetInfos.Add(boxSetInfo);
                     }
@@ -205,23 +201,23 @@ namespace DataBase
                     {
                         GroupSetInfoClass groupSetInfo = new GroupSetInfoClass
                         {
-                            GroupName = group.Name,
-                            GroupFrontScanBN = group.FrontScanBn,
-                            GroupFrontShowBN = group.FrontShowBn,
-                            GroupFrontSoundBN = group.FrontSoundBn,
-                            GroupFrontCardBN = group.FrontReadCardBn,
-                            GroupFrontSheXiangTouBN = group.FrontCameraBn,
-                            GroupFrontZhiJingMaiBN = group.FrontDigitalVein,
+                            GroupName = group.name,
+                            GroupFrontScanBN = group.frontScanBn,
+                            GroupFrontShowBN = group.frontShowBn,
+                            GroupFrontSoundBN = group.frontSoundBn,
+                            GroupFrontCardBN = group.frontReadCardBn,
+                            GroupFrontSheXiangTouBN = group.frontCameraBn,
+                            GroupFrontZhiJingMaiBN = group.frontDigitalVein,
 
-                            GroupBackCardBN = group.BackReadCardBn,
-                            GroupBackScanBN = group.BackScanBn,
-                            GroupBackSheXiangTouBN = group.BackCameraBn,
-                            GroupBackShowBN = group.BackShowBn,
-                            GroupBackSoundBN = group.BackSoundBn,
-                            GroupBackZhiJingMaiBN = group.BackDigitalVein,
+                            GroupBackCardBN = group.backReadCardBn,
+                            GroupBackScanBN = group.backScanBn,
+                            GroupBackSheXiangTouBN = group.backCameraBn,
+                            GroupBackShowBN = group.backShowBn,
+                            GroupBackSoundBN = group.backSoundBn,
+                            GroupBackZhiJingMaiBN = group.backDigitalVein,
                             PrinterName = "",
                             GroupNameArray = new string[0],
-                            BoxArray = group.Boxs.ToString().Split(',')
+                            BoxArray = group.boxs.ToString().Split(',')
                         };
 
                         groups.Add(groupSetInfo);
@@ -286,18 +282,18 @@ namespace DataBase
             {
                 box = new BoxInfo();
                 var url = Constant.ServiceURL + "GetBoxLetterCount";
-                var postData = "boxNo=" + boxNo;
+                var postData = "boxId=" + boxNo;
                 var result = HttpHelper.HttpGet(url, postData);
                 var b = JsonConvert.DeserializeObject<dynamic>(result);
                 if (b != null)
                 {
-                    box.BoxNO = b.BoxNo;
-                    box.BoxShowName = b.BoxName;
-                    box.BoxShowFullName = b.BaoKanString;
+                    box.BoxNO = b.id;
+                    box.BoxShowName = b.name;
+                    box.BoxShowFullName = b.permanentMessage;
                     box.IsQingTuiXiang = false;
-                    box.SendCount = b.FileCount;
-                    box.HasJiJian = b.HasJiJian;
-                    
+                    box.SendCount = b.fileCount;
+                    box.HasJiJian = b.hasUrgent;
+
                     box.BoxProperty = 0;
                 }
             }
@@ -389,29 +385,25 @@ namespace DataBase
             else
             {
                 var url = Constant.ServiceURL + "CheckBarCodeType";
-                var postData = "barCode=" + barCode;
+                var postData = "barcodeNo=" + barCode;
                 var result = HttpHelper.HttpGet(url, postData);
-                if (result != "")
-                {
-                    var obj = JsonConvert.DeserializeObject<dynamic>(result);
-                    if (obj.Record != null)
-                    {
-                        Log.WriteFileLog("obj.Record != null");
-                        foreach (var o in obj.Record)
-                        {
-                            var sendBoxList = new SendBoxList
-                            {
-                                BoxNo = o.No,
-                                Count = o.FileCount,
-                                msg = o.Msg
-                            };
-                            boxs.Add(sendBoxList);
-                        }
-                    }
 
-                    rType = (BarCodeType)obj.Type;
-                    Log.WriteFileLog("rType= " + rType);
+                var obj = JsonConvert.DeserializeObject<dynamic>(result);
+                if (obj.Record != null)
+                {
+                    foreach (var o in obj.Record)
+                    {
+                        var sendBoxList = new SendBoxList
+                        {
+                            BoxNo = o.id.ToString(),
+                            Count = o.fileCount,
+                            msg = o.msg
+                        };
+                        boxs.Add(sendBoxList);
+                    }
                 }
+                rType = (BarCodeType)obj.type;
+
             }
             logMessage += "返回检查信件结果：" + rType + "\r\n";
             var ts = DateTime.Now - dtStart;
@@ -765,7 +757,7 @@ namespace DataBase
         /// <returns>投入信件的急件属性</returns>
         public static int SaveLetter(string LetterCode, int BoxNO, bool bUragent, int SendCount, string SendCardNO, string RecFileName, bool 是否退信, string 退信的管理员的证卡编号)
         {
-            DateTime dtStart = DateTime.Now; 
+            DateTime dtStart = DateTime.Now;
             string LogMessage = "保存信件：" + LetterCode + "，箱号：" + BoxNO + "\r\n";
 
             int iRet = -1; //error
