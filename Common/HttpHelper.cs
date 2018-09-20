@@ -54,7 +54,15 @@ namespace Common
             try
             {
                 var placeId = Convert.ToInt32(ConfigurationManager.AppSettings["PlaceId"]);
-                postDataStr += "&placeId=" + placeId;
+                if (postDataStr=="")
+                {
+                    postDataStr += "placeId=" + placeId;
+                }
+                else
+                {
+                    postDataStr += "&placeId=" + placeId;
+                }
+                
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url + (postDataStr == "" ? "" : "?") + postDataStr);
                 request.Method = "GET";
                 request.ContentType = "text/html;charset=UTF-8";
